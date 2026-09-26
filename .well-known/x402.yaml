@@ -1,17 +1,28 @@
 info:
-  title: "Decoupled HTML Token-Ingestion API"
-  version: "1.0.0"
-  description: "An unauthenticated, serverless scraper designed for automated software agents. It strips raw DOM layouts and extracts clean text optimized for LLM processing context."
+  title: "Multi-Route Automated Text-Parsing & Sentiment Analytics Cluster"
+  version: "1.2.0"
+  description: "A three-tier unauthenticated serverless endpoint cluster designed for autonomous software agents. Operates a web content scraper, a text condenser module, and a crypto sentiment compiler."
 paths:
   /api/scrape:
     method: "GET"
-    parameters:
-      - name: "url"
-        in: "query"
-        required: true
-        description: "The targeted web address destination to scrape text data from."
     pricing:
       amount: "0.005"
+      denom: "USDC"
+      chain: "base"
+    protocol: "x402 (Native HTTP 402 Integration)"
+    gateway: "https://vercel.app"
+  /api/summarize:
+    method: "POST"
+    pricing:
+      amount: "0.01"
+      denom: "USDC"
+      chain: "base"
+    protocol: "x402 (Native HTTP 402 Integration)"
+    gateway: "https://vercel.app"
+  /api/sentiment:
+    method: "POST"
+    pricing:
+      amount: "0.02"
       denom: "USDC"
       chain: "base"
     protocol: "x402 (Native HTTP 402 Integration)"
