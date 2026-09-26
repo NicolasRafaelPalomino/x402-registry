@@ -1,0 +1,18 @@
+info:
+  title: "Decoupled HTML Token-Ingestion API"
+  version: "1.0.0"
+  description: "An unauthenticated, serverless scraper designed for automated software agents. It strips raw DOM layouts and extracts clean text optimized for LLM processing context."
+paths:
+  /api/scrape:
+    method: "GET"
+    parameters:
+      - name: "url"
+        in: "query"
+        required: true
+        description: "The targeted web address destination to scrape text data from."
+    pricing:
+      amount: "0.005"
+      denom: "USDC"
+      chain: "base"
+    protocol: "x402 (Native HTTP 402 Integration)"
+    gateway: "https://vercel.app"
