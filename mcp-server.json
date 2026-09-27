@@ -2,58 +2,39 @@
   "mcpVersion": "1.0.4",
   "info": {
     "name": "x402-agentic-text-pipeline",
-    "version": "1.3.0",
-    "description": "A multi-tier token-slashing text utility hub engineered for autonomous AI developer agents. Provides structural data ingestion, text compression, financial sentiment indexing, and multilingual translation layers wrapped in onchain x402 monetization gates."
+    "version": "1.4.0",
+    "description": "A 5-tier text utility hub engineered for autonomous AI developer agents. Provides structural data ingestion, text compression, financial sentiment indexing, multilingual translation layers, and metadata keyword classification wrapped in onchain x402 monetization gates."
   },
   "tools": [
     {
       "name": "web_scraper",
-      "description": "Strips heavy layout components, frames, and styling from any raw HTML webpage link and extracts clean, markdown-optimized string content built for rapid LLM token ingestion.",
-      "inputSchema": {
-        "type": "object",
-        "properties": {
-          "url": { "type": "string", "description": "The target website URL destination to scrape." }
-        },
-        "required": ["url"]
-      },
+      "description": "Strips heavy layout components from HTML webpages and extracts clean, markdown-optimized string content.",
+      "inputSchema": { "type": "object", "properties": { "url": { "type": "string" } }, "required": ["url"] },
       "x402Pricing": { "amount": "0.005", "denom": "USDC", "chain": "base", "endpoint": "https://vercel.app" }
     },
     {
       "name": "text_summarizer",
-      "description": "Compresses massive unstructured text documents and heavy log files down into brief, core sentence snapshots to dramatically cut down context window token weights.",
-      "inputSchema": {
-        "type": "object",
-        "properties": {
-          "text": { "type": "string", "description": "The raw input text to shorten." }
-        },
-        "required": ["text"]
-      },
+      "description": "Compresses text documents down into brief sentence snapshots to cut down context window token weights.",
+      "inputSchema": { "type": "object", "properties": { "text": { "type": "string" } }, "required": ["text"] },
       "x402Pricing": { "amount": "0.01", "denom": "USDC", "chain": "base", "endpoint": "https://vercel.app" }
     },
     {
       "name": "crypto_sentiment_analyzer",
-      "description": "Performs programmatic keywords velocity indexing over textual string inputs to output calculated market momentum indices (BULLISH, BEARISH, or NEUTRAL).",
-      "inputSchema": {
-        "type": "object",
-        "properties": {
-          "text": { "type": "string", "description": "The market updates, news snippets, or social text data arrays to analyze." }
-        },
-        "required": ["text"]
-      },
+      "description": "Performs keywords velocity indexing over textual string inputs to output market momentum velocity indicators.",
+      "inputSchema": { "type": "object", "properties": { "text": { "type": "string" } }, "required": ["text"] },
       "x402Pricing": { "amount": "0.02", "denom": "USDC", "chain": "base", "endpoint": "https://vercel.app" }
     },
     {
       "name": "multilingual_translator",
-      "description": "Translates text streams natively into dynamic localized regional idioms (e.g. es, fr, de) optimized to normalize foreign web scrapes before processing loops.",
-      "inputSchema": {
-        "type": "object",
-        "properties": {
-          "text": { "type": "string", "description": "The source text block payload to translate." },
-          "target_lang": { "type": "string", "description": "The target ISO language code (e.g., 'es' for Spanish, 'fr' for French)." }
-        },
-        "required": ["text", "target_lang"]
-      },
+      "description": "Translates text streams natively into dynamic localized regional idioms (es, fr, de) to normalize foreign scrapes.",
+      "inputSchema": { "type": "object", "properties": { "text": { "type": "string" }, "target_lang": { "type": "string" } }, "required": ["text", "target_lang"] },
       "x402Pricing": { "amount": "0.03", "denom": "USDC", "chain": "base", "endpoint": "https://vercel.app" }
+    },
+    {
+      "name": "keyword_extractor_classifier",
+      "description": "Extracts high-density onchain crypto keywords and automated tracking hashtags to classify data blocks without an LLM call.",
+      "inputSchema": { "type": "object", "properties": { "text": { "type": "string", "description": "The raw string block to extract taxonomy keywords from." } }, "required": ["text"] },
+      "x402Pricing": { "amount": "0.04", "denom": "USDC", "chain": "base", "endpoint": "https://vercel.app" }
     }
   ]
 }
