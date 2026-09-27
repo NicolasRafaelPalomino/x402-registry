@@ -1,7 +1,7 @@
 info:
-  title: "Multi-Route Automated Text-Parsing & Sentiment Analytics Cluster"
-  version: "1.2.0"
-  description: "A three-tier unauthenticated serverless endpoint cluster designed for autonomous software agents. Operates a web content scraper, a text condenser module, and a crypto sentiment compiler."
+  title: "Multi-Route Automated Text-Parsing & Translation API Cluster"
+  version: "1.3.0"
+  description: "An unauthenticated serverless endpoint cluster designed for autonomous software agents. Operates a web content scraper, a text condenser module, a crypto sentiment compiler, and an international translation vector layer."
 paths:
   /api/scrape:
     method: "GET"
@@ -23,6 +23,19 @@ paths:
     method: "POST"
     pricing:
       amount: "0.02"
+      denom: "USDC"
+      chain: "base"
+    protocol: "x402 (Native HTTP 402 Integration)"
+    gateway: "https://vercel.app"
+  /api/translate:
+    method: "POST"
+    body:
+      - name: "text"
+        required: true
+      - name: "target_lang"
+        required: true
+    pricing:
+      amount: "0.03"
       denom: "USDC"
       chain: "base"
     protocol: "x402 (Native HTTP 402 Integration)"
